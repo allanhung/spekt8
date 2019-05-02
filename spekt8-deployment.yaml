@@ -13,7 +13,10 @@ spec:
         component: spekt8
     spec:
       containers:
-        - name: spekt8
-          image: elliotxkim/spekt8
-          ports:
-            - containerPort: 3000
+      - name: spekt8
+        image: elliotxkim/spekt8
+        env:
+        - name: HTTP_HOST
+          value: "localhost:3000"
+        ports:
+        - containerPort: 3000

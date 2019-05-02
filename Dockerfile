@@ -12,7 +12,8 @@ RUN npm install
 
 # bundle app source
 COPY . .
+COPY docker-entrypoint.sh /
 
 # bind to port 3000
 EXPOSE 3000
-CMD ["npm", "run", "server"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
